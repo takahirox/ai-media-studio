@@ -1,0 +1,63 @@
+import { type Tool } from "../Tool";
+
+export const IMAGE_TO_3D_TOOL: Tool = {
+  category: '3D Model Generation',
+  id: 'Image to 3D',
+  name: 'Image to 3D',
+  ui: [
+    {
+      default: '',
+      inputName: 'image',
+      mappingType: 'direct', // custom?
+      name: 'image',
+      type: 'image',
+    },
+    {
+      advanced: true,
+      default: 0.85,
+      inputName: 'foregroundRatio',
+      mappingType: 'direct',
+      name: 'foregroundRatio',
+      max: 1.0,
+      min: 0.1,
+      optional: true,
+      step: 0.01,
+      type: 'slider',
+    },
+    {
+      advanced: true,
+      default: 'quad',
+      inputName: 'remesh',
+      mappingType: 'direct',
+      name: 'remesh',
+      optional: true,
+      type: 'text-select',
+      values: ['none', 'quad', 'triangle'],
+    },
+    {
+      advanced: true,
+      default: '2048',
+      inputName: 'textureResolution',
+      mappingType: 'direct',
+      name: 'textureResolution',
+      optional: true,
+      type: 'text-select',
+      values: ['512', '1024', '2048'],
+    },
+    {
+      advanced: true,
+      default: -1,
+      inputName: 'vertexCount',
+      mappingType: 'direct',
+      name: 'vertexCount',
+      optional: true,
+      max: 20000,
+      min: -1,
+      step: 1,
+      type: 'slider',
+    },
+  ],
+  path: '/3d/image_to_3d',
+  pid: 'Image to 3D',
+  randomness: false,
+};
